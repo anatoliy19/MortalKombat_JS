@@ -1,6 +1,6 @@
 player1 = {
     name: 'Scorpio',
-    hp: 180,
+    hp: 100,
     img: 'http://reactmarathon-api.herokuapp.com/assets/scorpion.gif',
     weapon: 'knife',
     attack: function (){
@@ -10,7 +10,7 @@ player1 = {
 
 player2 = {
     name: 'Kitana',
-    hp: 160,
+    hp: 100,
     img: 'http://reactmarathon-api.herokuapp.com/assets/kitana.gif',
     weapon: 'gun',
     attack: function (){
@@ -27,7 +27,7 @@ player2 = {
  $div.appendChild($div_progressbar);
 
  const $div_life = document.createElement('div');
- $div_life.style.width = '100';
+ $div_life.style.width = player.hp + '%';
  $div_progressbar.appendChild($div_life);
 
  const $div_name = document.createElement('div');
