@@ -1,3 +1,6 @@
+import {player1, player2} from './player.js';
+import getRandom from './utils.js';
+
 const $div_arenas = document.querySelector('.arenas');
 const $randomButton = document.querySelector('.button');
 const $ReloadButton = document.createElement('button');
@@ -49,34 +52,6 @@ const logs = {
         '[playerKick] обманулся и жестокий [playerDefence] блокировал удар стопой в солнечное сплетение.'
     ],
     draw: 'Ничья - это тоже победа!'
-};
-
-const player1 = {
-    player: 1,
-    name: 'Scorpio',
-    hp: 100,
-    img: 'http://reactmarathon-api.herokuapp.com/assets/scorpion.gif',
-    weapon: 'knife',
-    changeHP,
-    renderHP,
-    elHP,
-    attack: function (name){
-        console.log(name+ ' Fight...');
-    }
-};
-
-const player2 = {
-    player: 2,
-    name: 'Kitana',
-    hp: 80,
-    img: 'http://reactmarathon-api.herokuapp.com/assets/kitana.gif',
-    weapon: 'gun',
-    changeHP,
-    renderHP,
-    elHP,
-    attack: function (name){
-        console.log(name+ ' Fight...');
-    }
 };
 
 function generateLogs(type,player1,player2){
@@ -148,13 +123,6 @@ function playerWon(name){
     return $loseTitle;
 }
 
-function getRandom(num){
-    kick = Math.ceil(Math.random() * num);
-    if (kick == 0){
-        kick = 1;
-    }
-    return kick;
-}
 
 function playerAttack(){
     const attack = {};
